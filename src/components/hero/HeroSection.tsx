@@ -66,7 +66,7 @@ const HeroSection = () => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
 
   return (
-    <div id="home" className="relative w-full h-screen overflow-hidden bg-black text-white font-sans">
+    <div id="home" className="relative w-full h-screen overflow-visible bg-black text-white font-sans">
       <Swiper
         onSwiper={setSwiperInstance}
         modules={[Autoplay, EffectFade, Navigation]}
@@ -95,10 +95,9 @@ const HeroSection = () => {
 
             {/* Content */}
             <div className="container mx-auto px-10 md:px-16 h-full flex flex-col justify-center relative z-20 pt-10">
-              <div 
-                className={`max-w-xl text-left transition-all duration-700 delay-100 ${
-                  activeIndex === idx ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
+              <div
+                className={`max-w-xl text-left transition-all duration-700 delay-100 ${activeIndex === idx ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}
               >
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight drop-shadow-md">
                   {slide.title}
@@ -144,32 +143,28 @@ const HeroSection = () => {
         </button>
       </div>
 
-      {/* Clean Thumbnail Navigation */}
-      <div className="absolute bottom-8 left-0 w-full z-30 pointer-events-none">
-        <div className="container mx-auto px-10 md:px-16">
-          <div className="flex space-x-2 md:space-x-4 pointer-events-auto max-w-4xl">
-            {slides.map((slide, idx) => (
-              <div
-                key={slide.id}
-                onClick={() => swiperInstance?.slideToLoop(idx)}
-                className={`relative flex-1 h-14 md:h-16 rounded-xl overflow-hidden cursor-pointer group transition-all duration-300 ${
-                  activeIndex === idx ? 'ring-2 ring-white ring-offset-2 ring-offset-black/20' : 'opacity-70 hover:opacity-100'
-                }`}
-              >
-                <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                  style={{ backgroundImage: `url(${slide.image})` }}
-                ></div>
-                <div className={`absolute inset-0 transition-colors duration-300 ${activeIndex === idx ? 'bg-black/10' : 'bg-black/50 group-hover:bg-black/30'}`}></div>
-                <div className="absolute inset-x-0 bottom-0 p-2 md:p-3 bg-gradient-to-t from-black/80 to-transparent">
-                  <span className="text-white font-bold text-[10px] md:text-[11px] uppercase tracking-wider block truncate drop-shadow-md">
-                    {slide.title}
-                  </span>
-                </div>
-              </div>
-            ))}
+      {/* PlayStation Style Bottom Edge Thumbnail Navigation */}
+      <div 
+        className="absolute z-30 flex space-x-3 pointer-events-auto group/strip"
+        style={{ bottom: '-40px', left: '50%', transform: 'translateX(-50%)' }}
+      >
+        {slides.map((slide, idx) => (
+          <div
+            key={slide.id}
+            onClick={() => swiperInstance?.slideToLoop(idx)}
+            className={`relative flex-none w-[150px] h-[80px] rounded-xl overflow-hidden cursor-pointer transition-all duration-300 ease-out ${
+              activeIndex === idx 
+                ? 'ring-[2px] ring-white shadow-[0_0_20px_rgba(59,130,246,0.8)] z-10 opacity-100 group-hover/strip:opacity-90' 
+                : 'opacity-80 group-hover/strip:opacity-40'
+            } hover:!opacity-100 hover:-translate-y-[10px] hover:scale-105 hover:brightness-110 hover:shadow-[0_10px_25px_rgba(0,0,0,0.5)] hover:z-20`}
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-center transition-transform duration-500 hover:scale-110"
+              style={{ backgroundImage: `url(${slide.image})` }}
+            ></div>
+            <div className={`absolute inset-0 transition-colors duration-300 ${activeIndex === idx ? 'bg-transparent' : 'bg-black/40 hover:bg-transparent'}`}></div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );

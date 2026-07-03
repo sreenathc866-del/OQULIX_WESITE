@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/ui/Navbar';
 import HeroSection from './components/hero/HeroSection';
+import ProductCarousel from './components/products/ProductCarousel';
 import ProductShowcase from './components/products/ProductShowcase';
 import SolutionsSection from './components/solutions/SolutionsSection';
 import AboutSection from './components/about/AboutSection';
@@ -21,6 +22,7 @@ const App = () => {
           element={
             <>
               <HeroSection />
+              <ProductCarousel />
               <ProductShowcase />
               <SolutionsSection />
               <AboutSection />

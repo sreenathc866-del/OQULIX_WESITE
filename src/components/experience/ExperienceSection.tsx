@@ -10,8 +10,8 @@ const ExperienceSection = () => {
                     <h2 className="text-4xl font-light mb-4">Explore Our <span className="font-bold text-blue-400">3D Experiences</span></h2>
                     <p className="text-lg text-gray-400 max-w-2xl mx-auto">Immerse yourself in our innovative solutions, from VR headsets to AR cards. Interact with the canvas below.</p>
                 </div>
-                
-                <div className="w-full max-w-4xl mx-auto h-[500px] bg-black/50 border border-gray-800 rounded-3xl overflow-hidden shadow-2xl relative">
+
+                <div className="w-full max-w-4xl mx-auto h-[300px] sm:h-[400px] md:h-[500px] bg-black/50 border border-gray-800 rounded-3xl overflow-hidden shadow-2xl relative">
                     <Canvas className="w-full h-full">
                         <ambientLight intensity={0.5} />
                         <pointLight position={[10, 10, 10]} />

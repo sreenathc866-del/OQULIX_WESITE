@@ -1,100 +1,114 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { products } from '../../data/content';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const ProductShowcase = () => {
-    const [selectedProduct, setSelectedProduct] = useState(products[0]);
-    const scrollContainerRef = useRef<HTMLDivElement>(null);
-
-    const handleProductClick = (product: typeof products[0]) => {
-        setSelectedProduct(product);
-    };
-
-    const scroll = (direction: 'left' | 'right') => {
-        if (scrollContainerRef.current) {
-            const { current } = scrollContainerRef;
-            const scrollAmount = direction === 'left' ? -300 : 300;
-            current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-        }
-    };
-
     return (
-        <section id="products" className="relative py-24 bg-white">
-            <div className="container mx-auto px-6 max-w-[1400px]">
-                <div className="flex justify-between items-end mb-8">
-                    <h2 className="text-3xl md:text-4xl font-light text-gray-900">
-                        Discover all <br/> <span className="font-bold">Products and Accessories</span>
-                    </h2>
-                </div>
+        <div id="products" className="w-full flex flex-col font-sans">
+            {products.map((product, index) => {
+                const isDark = index % 2 !== 0; // Alternates: Light, Dark, Light, Dark...
+                const isReversed = index % 2 !== 0; // Alternate image left/right
 
-                {/* Slider Container */}
-                <div className="relative flex items-center">
-                    <button 
-                        onClick={() => scroll('left')}
-                        className="absolute -left-4 z-10 p-3 bg-white rounded-full shadow-md text-blue-600 hover:bg-gray-50 transition hidden md:block"
+                return (
+                    <section
+                        key={product.id}
+                        className={`w-full py-16 md:py-24 lg:py-32 overflow-hidden transition-colors duration-500 ${isDark ? 'bg-[#0f0f0f] text-white' : 'bg-[#fafafa] text-gray-900'
+                            }`}
                     >
-                        <FaChevronLeft />
-                    </button>
-                    
-                    <div 
-                        ref={scrollContainerRef}
-                        className="flex space-x-6 overflow-x-auto pb-8 pt-4 px-2 snap-x hide-scrollbar w-full"
-                    >
-                        {products.map((product) => {
-                            const isSelected = selectedProduct.id === product.id;
-                            return (
+                        <div className={`container mx-auto px-6 md:px-10 lg:px-12 max-w-[1300px] flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-10 md:gap-16 lg:gap-20`}>
+
+                            {/* Text Content */}
+                            <div className="flex-1 space-y-6 lg:space-y-8 z-10 w-full text-center lg:text-left">
                                 <motion.div
-                                    key={product.id}
-                                    className={`min-w-[280px] h-[300px] flex flex-col items-center justify-between bg-white rounded-2xl cursor-pointer snap-start transition-all duration-300 ${
-                                        isSelected 
-                                            ? 'border-[3px] border-blue-600 shadow-lg scale-105' 
-                                            : 'border border-gray-100 shadow-sm hover:shadow-md'
-                                    }`}
-                                    onClick={() => handleProductClick(product)}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-100px" }}
+                                    transition={{ duration: 0.6, ease: "easeOut" }}
                                 >
-                                    <div className="flex-1 flex items-center justify-center p-0 w-full rounded-t-xl overflow-hidden relative">
-                                        <img 
-                                            src={product.image || "https://images.unsplash.com/photo-1617802690992-15d93263d3a9?q=80&w=2070&auto=format&fit=crop"} 
-                                            alt={product.name} 
-                                            className="w-full h-full object-cover"
-                                        />
-                                        {/* Optional gradient overlay */}
-                                        <div className="absolute inset-0 bg-black/10"></div>
-                                    </div>
-                                    <div className="w-full text-center py-4 border-t border-gray-100 bg-white rounded-b-xl z-10">
-                                        <h3 className={`text-sm font-bold ${isSelected ? 'text-blue-600' : 'text-gray-800'}`}>
-                                            {product.name}
-                                        </h3>
-                                    </div>
+                                    {/* PlayStation style tagline */}
+                                    {product.tagline && (
+                                        <p className="text-[#0070cc] font-bold text-sm tracking-widest uppercase mb-3">
+                                            {product.tagline}
+                                        </p>
+                                    )}
+                                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+                                        {product.name}
+                                    </h2>
                                 </motion.div>
-                            );
-                        })}
-                    </div>
 
-                    <button 
-                        onClick={() => scroll('right')}
-                        className="absolute -right-4 z-10 p-3 bg-white rounded-full shadow-md text-blue-600 hover:bg-gray-50 transition hidden md:block"
-                    >
-                        <FaChevronRight />
-                    </button>
-                </div>
+                                <motion.p
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-100px" }}
+                                    transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+                                    className={`text-lg md:text-xl leading-relaxed max-w-xl ${isDark ? 'text-gray-300' : 'text-gray-600'}`}
+                                >
+                                    {product.description}
+                                </motion.p>
 
-                {/* Selected Product Details */}
-                <div className="mt-12 md:w-1/2">
-                    <h3 className="text-3xl text-gray-900 font-bold mb-3">{selectedProduct.name}</h3>
-                    <p className="text-gray-600 mb-8">{selectedProduct.description}</p>
-                    <div className="flex space-x-4">
-                        <a href="#about" className="bg-[#003399] text-white font-bold px-6 py-2.5 rounded-full hover:bg-blue-800 transition shadow-md">
-                            Find out more
-                        </a>
-                        <a href="#contact" className="bg-white border-2 border-gray-200 text-gray-800 font-bold px-6 py-2.5 rounded-full hover:bg-gray-50 transition shadow-sm">
-                            Book Demo
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+                                {/* Features List */}
+                                {product.features && (
+                                    <motion.ul
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true, margin: "-100px" }}
+                                        transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
+                                        className={`grid grid-cols-1 md:grid-cols-2 gap-3 max-w-xl ${isDark ? 'text-gray-400' : 'text-gray-500'}`}
+                                    >
+                                        {product.features.map((feature, i) => (
+                                            <li key={i} className="flex items-center space-x-2 text-sm font-medium">
+                                                <div className="w-1.5 h-1.5 rounded-full bg-[#0070cc]"></div>
+                                                <span>{feature}</span>
+                                            </li>
+                                        ))}
+                                    </motion.ul>
+                                )}
+
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, margin: "-100px" }}
+                                    transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+                                    className="pt-4 flex flex-wrap justify-center lg:justify-start gap-4"
+                                >
+                                    <a
+                                        href={product.cta.explore}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`inline-flex items-center justify-center px-8 py-3.5 rounded-full font-bold text-sm uppercase tracking-wide transition-all duration-300 shadow-lg ${isDark
+                                            ? 'bg-white text-black hover:bg-gray-200 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]'
+                                            : 'bg-[#0070cc] text-white hover:bg-[#005fb3] hover:scale-105 hover:shadow-[0_0_20px_rgba(0,112,204,0.4)]'
+                                            }`}
+                                    >
+                                        Learn More
+                                    </a>
+                                </motion.div>
+                            </div>
+
+                            {/* Image/Media Content */}
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9, rotateY: isReversed ? -10 : 10 }}
+                                whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
+                                viewport={{ once: true, margin: "-100px" }}
+                                transition={{ duration: 0.8, ease: "easeOut" }}
+                                className="flex-1 w-full relative perspective-1000"
+                            >
+                                <div className={`aspect-video w-full rounded-2xl overflow-hidden shadow-2xl relative group ${isDark ? 'ring-1 ring-white/10 shadow-white/5' : 'ring-1 ring-black/5 shadow-black/10'}`}>
+                                    <img
+                                        src={product.image}
+                                        alt={product.name}
+                                        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                                    />
+                                    {/* Premium subtle gradient overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-tr from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                </div>
+                            </motion.div>
+
+                        </div>
+                    </section>
+                );
+            })}
+        </div>
     );
 };
 

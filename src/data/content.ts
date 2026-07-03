@@ -2,45 +2,53 @@ export const products = [
   {
     id: 1,
     name: "Happy Moves",
-    description: "VR Physiotherapy solution designed to enhance rehabilitation through immersive experiences.",
+    tagline: "Redefining Physical Therapy",
+    description: "Happy Moves utilizes cutting-edge Virtual Reality to transform traditional rehabilitation. By immersing patients in interactive, game-like environments, it increases motivation and accelerates recovery. Our platform tracks precise movements, offering real-time feedback and comprehensive data analytics for therapists.",
+    features: ["Immersive 3D Environments", "Real-time Motion Tracking", "Gamified Rehabilitation", "Clinical Data Analytics"],
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
     video: "/videos/happy-moves.mp4",
     cta: {
-      explore: "/products/happy-moves",
-      bookDemo: "/contact",
+      explore: "https://www.happymovesrehab.com/",
+      bookDemo: "#contact",
     },
   },
   {
     id: 2,
     name: "AR Flash Cards",
-    description: "Interactive augmented reality flash cards for engaging learning experiences.",
+    tagline: "Bring Learning to Life",
+    description: "Transform standard education into an interactive journey. With AR Flash Cards, children simply point their device at a card to see 3D models, animations, and hear authentic sounds. It bridges the gap between physical play and digital learning, fostering curiosity and retention.",
+    features: ["Interactive 3D Models", "Audio-Visual Feedback", "iOS & Android Support", "Curriculum Aligned"],
     image: "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?q=80&w=2070&auto=format&fit=crop",
     video: "/videos/ar-flash-cards.mp4",
     cta: {
-      explore: "/products/ar-flash-cards",
-      bookDemo: "/contact",
+      explore: "https://arcards.oqulix.com/",
+      bookDemo: "#contact",
     },
   },
   {
     id: 3,
     name: "Happy Class",
-    description: "An innovative educational platform that combines AR and interactive learning.",
+    tagline: "The Classroom of the Future",
+    description: "Happy Class integrates seamlessly with smart boards to deliver gamified, curriculum-based activities. It transforms passive lectures into highly interactive sessions where students can collaborate, compete, and engage deeply with the subject matter.",
+    features: ["Smart Board Integration", "Multiplayer Activities", "Teacher Analytics Dashboard", "Customizable Lessons"],
     image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2132&auto=format&fit=crop",
     video: "/videos/happy-class.mp4",
     cta: {
-      explore: "/products/happy-class",
-      bookDemo: "/contact",
+      explore: "https://www.oqulix.com/",
+      bookDemo: "#contact",
     },
   },
   {
     id: 4,
     name: "GAMEFAKTORY",
-    description: "Experience next-level gaming with our cutting-edge neon VR arcade and rewards system.",
+    tagline: "Next-Level Engagement",
+    description: "Elevate your brand or event with GAMEFAKTORY's custom interactive gaming solutions. We create immersive VR and AR experiences designed to captivate audiences, drive engagement, and deliver unforgettable marketing campaigns.",
+    features: ["Custom Brand Integration", "High-End VR Experiences", "Reward-based Mechanics", "Event & Retail Deployment"],
     image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2071&auto=format&fit=crop",
     video: "/videos/gamefaktory.mp4",
     cta: {
-      explore: "/products/gamefaktory",
-      bookDemo: "/contact",
+      explore: "https://www.gamefaktory.com/",
+      bookDemo: "#contact",
     },
   },
 ];
@@ -113,14 +121,32 @@ export const testimonialsData = [
 export const team = [
   {
     id: 1,
-    name: "John Doe",
-    role: "Founder",
-    image: "/images/team/john-doe.jpg",
+    name: "Vishnuprakash P",
+    role: "Founder / CEO",
+    image: "/images/team/vishnuprakash.jpg", // Needs actual path
+     socials: {
+       linkedin: "#",
+       instagram: "#",
+    },
   },
   {
     id: 2,
-    name: "Jane Smith",
+    name: "Anjana Remesh",
     role: "Co-founder",
-    image: "/images/team/jane-smith.jpg",
+    image: "/images/team/anjana.jpg", // Needs actual path
+    socials: {
+      linkedin: "#",
+      instagram: "#",
+    },
+  },
+  {
+    id: 3,
+    name: "Sandeep P",
+    role: "Co-founder",
+    image: "/images/team/sandeep.jpg", // Needs actual path
+    socials: {
+      linkedin: "#",
+      instagram: "#",
+    },
   },
 ];

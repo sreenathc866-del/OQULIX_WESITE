@@ -8,7 +8,7 @@ const ContactSection = () => {
                     <h2 className="text-4xl font-light text-gray-900 mb-4">Get in <span className="font-bold">Touch</span></h2>
                     <p className="text-gray-600 max-w-2xl mx-auto">Ready to experience the future? Reach out to us for product inquiries or to book a live demonstration.</p>
                 </div>
-                
+
                 <div className="flex flex-col md:flex-row gap-12 max-w-6xl mx-auto">
                     <form className="bg-gray-50 border border-gray-100 p-10 rounded-3xl shadow-sm w-full md:w-1/2">
                         <div className="mb-6">
@@ -32,10 +32,10 @@ const ContactSection = () => {
                             <button type="submit" className="flex-1 bg-gray-900 hover:bg-black text-white font-bold py-4 px-6 rounded-full transition-colors shadow-lg">Contact Us</button>
                         </div>
                     </form>
-                    
+
                     <div className="w-full md:w-1/2 flex flex-col">
                         <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Headquarters</h3>
-                        <div className="flex-1 w-full rounded-3xl overflow-hidden shadow-sm border border-gray-100 min-h-[400px]">
+                        <div className="flex-1 w-full rounded-3xl overflow-hidden shadow-sm border border-gray-100 min-h-[300px] lg:min-h-[400px]">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509303!2d144.9537353153165!3d-37.81627997975168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11b3f7%3A0x5045675218ceed30!2sOQULIX!5e0!3m2!1sen!2sau!4v1616161616161!5m2!1sen!2sau"
                                 width="100%"

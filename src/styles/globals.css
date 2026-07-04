@@ -1,14 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-sans: 'Montserrat', sans-serif;
+}
 
 body {
     background-color: #ffffff;
     color: #111827; /* gray-900 */
-    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
-    letter-spacing: -0.025em; /* tracking-tight */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300; /* Default to Light */
+    letter-spacing: -0.02em; /* PlayStation clean look */
+    line-height: 1.2;
+}
+
+/* For bolder headings where needed */
+strong, b, .font-bold, .font-semibold, h1 strong, h2 strong, h3 strong {
+    font-weight: 600; /* SemiBold */
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400; /* Regular */
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+}
+
+button, .nav-link, a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500; /* Medium */
+    letter-spacing: 0.02em;
 }
 
 html {

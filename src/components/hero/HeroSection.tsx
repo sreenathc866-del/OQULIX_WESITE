@@ -18,6 +18,9 @@ const slides = [
     primaryUrl: "#about",
     primaryBtn: "Learn More",
     secondaryBtn: "Contact Us",
+    alignmentClass: "justify-end items-start text-left pb-16 md:pb-24",
+    btnClass: "justify-start",
+    sizeClass: "max-w-lg"
   },
   {
     id: 2,
@@ -28,6 +31,9 @@ const slides = [
     primaryUrl: "https://www.happymovesrehab.com/",
     primaryBtn: "Visit Happy Moves",
     secondaryBtn: "Request Demo",
+    alignmentClass: "justify-end items-start text-left pb-16 md:pb-24",
+    btnClass: "justify-start",
+    sizeClass: "max-w-lg"
   },
   {
     id: 3,
@@ -38,6 +44,9 @@ const slides = [
     primaryUrl: "https://www.gamefaktory.com/",
     primaryBtn: "Visit GameFaktory",
     secondaryBtn: "Book a Demo",
+    alignmentClass: "justify-end items-start text-left pb-16 md:pb-24",
+    btnClass: "justify-start",
+    sizeClass: "max-w-lg"
   },
   {
     id: 4,
@@ -48,6 +57,9 @@ const slides = [
     primaryUrl: "https://arcards.oqulix.com/",
     primaryBtn: "View AR Cards",
     secondaryBtn: "Get Product Sheet",
+    alignmentClass: "justify-end items-start text-left pb-16 md:pb-24",
+    btnClass: "justify-start",
+    sizeClass: "max-w-lg"
   },
   {
     id: 5,
@@ -58,6 +70,9 @@ const slides = [
     primaryUrl: "#",
     primaryBtn: "Explore Happy Class",
     secondaryBtn: "View Features",
+    alignmentClass: "justify-end items-start text-left pb-16 md:pb-24",
+    btnClass: "justify-start",
+    sizeClass: "max-w-lg"
   }
 ];
 
@@ -81,8 +96,8 @@ const HeroSection = () => {
           autoplay={{ delay: 6000, disableOnInteraction: false }}
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
           navigation={{
-            prevEl: '.hero-prev',
-            nextEl: '.hero-next',
+            prevEl: '.hero-prev-invisible',
+            nextEl: '.hero-next-invisible',
           }}
           loop={true}
           className="w-full h-full"
@@ -101,9 +116,9 @@ const HeroSection = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent z-10 pointer-events-none" />
 
               {/* Content */}
-              <div className="container mx-auto px-6 sm:px-10 md:px-16 h-full flex flex-col justify-center relative z-20 pt-10 pointer-events-none">
+              <div className={`container mx-auto px-6 sm:px-10 md:px-16 h-full flex flex-col relative z-20 pointer-events-none ${slide.alignmentClass || 'justify-center items-start text-left'}`}>
                 <div
-                  className={`max-w-xl text-left transition-all duration-700 delay-100 pointer-events-auto ${activeIndex === idx ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  className={`transition-all duration-700 delay-100 pointer-events-auto ${slide.sizeClass || 'max-w-xl'} ${activeIndex === idx ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}
                 >
                   <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 md:mb-4 tracking-tight drop-shadow-md">
@@ -114,11 +129,11 @@ const HeroSection = () => {
                     {slide.subtitle}
                   </h2>
 
-                  <p className="text-sm md:text-base text-gray-200 mb-6 md:mb-8 leading-relaxed font-normal max-w-md drop-shadow-sm">
+                  <p className={`text-sm md:text-base text-gray-200 mb-6 md:mb-8 leading-relaxed font-normal max-w-md drop-shadow-sm ${slide.alignmentClass?.includes('text-right') ? 'ml-auto' : slide.alignmentClass?.includes('text-center') ? 'mx-auto' : ''}`}>
                     {slide.description}
                   </p>
 
-                  <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+                  <div className={`flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 ${slide.btnClass || 'justify-start'}`}>
                     <a
                       href={slide.primaryUrl}
                       target={slide.primaryUrl !== "#" && slide.primaryUrl !== "#about" ? "_blank" : "_self"}
@@ -141,15 +156,9 @@ const HeroSection = () => {
         </Swiper>
       </div>
 
-      {/* Minimal Navigation Arrows - Centered within the banner */}
-      <div className="absolute left-4 right-4 md:left-6 md:right-6 top-[200px] md:top-[300px] -translate-y-1/2 z-30 flex justify-between pointer-events-none hidden sm:flex">
-        <button className="hero-prev w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-white/60 hover:text-white hover:scale-110 transition-all cursor-pointer pointer-events-auto drop-shadow-md">
-          <FaChevronLeft size={24} className="md:w-8 md:h-8" />
-        </button>
-        <button className="hero-next w-10 h-10 md:w-12 md:h-12 flex items-center justify-center text-white/60 hover:text-white hover:scale-110 transition-all cursor-pointer pointer-events-auto drop-shadow-md">
-          <FaChevronRight size={24} className="md:w-8 md:h-8" />
-        </button>
-      </div>
+      {/* Invisible Clickable Navigation Areas on Left and Right edges */}
+      <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 z-20 hero-prev-invisible cursor-pointer" title="Previous Slide"></div>
+      <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 z-20 hero-next-invisible cursor-pointer" title="Next Slide"></div>
 
       {/* PlayStation Style Clean White Thumbnail Section */}
       <div className="w-full bg-white relative flex justify-center z-30 py-6 md:py-10 shadow-[0_-10px_20px_rgba(0,0,0,0.02)]">

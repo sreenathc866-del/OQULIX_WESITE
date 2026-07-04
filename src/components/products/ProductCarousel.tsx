@@ -79,13 +79,9 @@ const ProductCarousel = () => {
                         })}
                     </Swiper>
 
-                    {/* Custom Navigation Buttons */}
-                    <button className="product-prev absolute left-2 md:-left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-14 md:h-14 bg-white rounded-full flex items-center justify-center shadow-[0_4px_15px_rgba(0,0,0,0.15)] text-[#0070cc] hover:bg-gray-50 hover:scale-110 transition-all disabled:opacity-0 disabled:cursor-not-allowed">
-                        <FaChevronLeft size={16} className="md:w-5 md:h-5 mr-1" />
-                    </button>
-                    <button className="product-next absolute right-6 md:right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-14 md:h-14 bg-white rounded-full flex items-center justify-center shadow-[0_4px_15px_rgba(0,0,0,0.15)] text-[#0070cc] hover:bg-gray-50 hover:scale-110 transition-all disabled:opacity-0 disabled:cursor-not-allowed">
-                        <FaChevronRight size={16} className="md:w-5 md:h-5 ml-1" />
-                    </button>
+                    {/* Invisible Clickable Navigation Areas on Left and Right edges */}
+                    <div className="product-prev absolute left-0 top-0 bottom-0 w-16 md:w-24 z-20 cursor-pointer" title="Previous"></div>
+                    <div className="product-next absolute right-0 top-0 bottom-0 w-16 md:w-24 z-20 cursor-pointer" title="Next"></div>
                 </div>
             </div>
         </section>

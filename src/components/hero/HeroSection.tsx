@@ -161,8 +161,8 @@ const HeroSection = () => {
       <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 z-10 hero-next-invisible cursor-pointer" title="Next Slide"></div>
 
       {/* PlayStation Style Clean White Thumbnail Section */}
-      <div className="w-full bg-white relative flex justify-center z-30 pt-6 pb-6 md:pt-10 md:pb-8 shadow-[0_-10px_20px_rgba(0,0,0,0.02)]">
-        <div className="flex overflow-x-auto hide-scrollbar lg:overflow-visible flex-nowrap lg:flex-wrap justify-start lg:justify-center gap-2 sm:gap-3 md:gap-4 px-4 sm:px-6 w-full max-w-[1200px] pointer-events-auto group/strip">
+      <div className="w-full bg-white relative flex justify-center z-30 pt-2 pb-2 md:pt-6 md:pb-4 shadow-[0_-10px_20px_rgba(0,0,0,0.02)]">
+        <div className="flex overflow-x-auto hide-scrollbar lg:overflow-visible flex-nowrap lg:flex-wrap justify-start lg:justify-center gap-2 sm:gap-3 md:gap-4 px-4 sm:px-6 py-4 w-full max-w-[1200px] pointer-events-auto group/strip">
           {slides.map((slide, idx) => (
             <div
               key={slide.id}

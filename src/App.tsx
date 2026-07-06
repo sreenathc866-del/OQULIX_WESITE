@@ -6,7 +6,7 @@ import ProductCarousel from './components/products/ProductCarousel';
 import ProductShowcase from './components/products/ProductShowcase';
 import SolutionsSection from './components/solutions/SolutionsSection';
 import AboutSection from './components/about/AboutSection';
-import ExperienceSection from './components/experience/ExperienceSection';
+// import ExperienceSection from './components/experience/ExperienceSection';
 import TestimonialsSection from './components/testimonials/TestimonialsSection';
 import TeamSection from './components/team/TeamSection';
 import ContactSection from './components/contact/ContactSection';
@@ -26,7 +26,7 @@ const App = () => {
               <ProductShowcase />
               <SolutionsSection />
               <AboutSection />
-              <ExperienceSection />
+              {/* <ExperienceSection /> */}
               <TestimonialsSection />
               <TeamSection />
               <ContactSection />

@@ -81,12 +81,12 @@ const HeroSection = () => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
 
   return (
-    <div id="home" className="relative w-full overflow-hidden bg-white text-white font-sans flex flex-col min-h-screen">
+    <div id="home" className="relative w-full overflow-hidden bg-white text-white font-sans flex flex-col md:min-h-screen">
       {/* 
         BANNER HEIGHT ADJUSTMENT:
-        Adjust the heights here (h-[400px] md:h-[600px] lg:h-[800px]) to change how tall the top image section is.
+        Adjust the heights here (h-[400px] md:h-[600px] lg:h-[603px]) to change how tall the top image section is.
       */}
-      <div className="w-full relative h-[400px] md:h-[600px] lg:h-[603px]">
+      <div className="w-full relative h-[550px] md:h-[600px] lg:h-[603px]">
         <Swiper
           onSwiper={setSwiperInstance}
           modules={[Autoplay, EffectFade, Navigation]}
@@ -116,7 +116,7 @@ const HeroSection = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent z-10 pointer-events-none" />
 
               {/* Content */}
-              <div className={`container mx-auto px-6 sm:px-10 md:px-16 h-full flex flex-col relative z-20 pointer-events-none ${slide.alignmentClass || 'justify-center items-start text-left'}`}>
+              <div className={`container mx-auto px-6 sm:px-10 md:px-16 h-full flex flex-col relative z-20 pointer-events-none pt-28 md:pt-0 ${slide.alignmentClass || 'justify-center items-start text-left'}`}>
                 <div
                   className={`transition-all duration-700 delay-100 pointer-events-auto ${slide.sizeClass || 'max-w-xl'} ${activeIndex === idx ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}
@@ -162,7 +162,7 @@ const HeroSection = () => {
 
       {/* PlayStation Style Clean White Thumbnail Section */}
       <div className="w-full bg-white relative flex justify-center z-30 py-6 md:py-10 shadow-[0_-10px_20px_rgba(0,0,0,0.02)]">
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 px-4 sm:px-6 max-w-[1200px] pointer-events-auto group/strip">
+        <div className="flex overflow-x-auto hide-scrollbar md:overflow-visible flex-nowrap md:flex-wrap justify-start md:justify-center gap-2 sm:gap-3 md:gap-4 px-4 sm:px-6 w-full max-w-[1200px] pointer-events-auto group/strip pb-2 md:pb-0">
           {slides.map((slide, idx) => (
             <div
               key={slide.id}

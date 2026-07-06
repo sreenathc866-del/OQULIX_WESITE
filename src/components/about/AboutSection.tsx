@@ -10,7 +10,7 @@ const AboutSection = () => {
                 <div className="text-center mb-16">
                     <h2 className="text-4xl font-light mb-4">About <span className="font-bold">OQULIX</span></h2>
                 </div>
-                
+
                 <div className="flex flex-col md:flex-row gap-12 mb-20">
                     <div className="w-full md:w-1/2">
                         <h3 className="text-2xl font-bold mb-4 text-blue-600">Our Journey</h3>

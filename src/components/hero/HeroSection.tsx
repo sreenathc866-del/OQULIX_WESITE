@@ -81,7 +81,7 @@ const HeroSection = () => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
 
   return (
-    <div id="home" className="relative w-full overflow-hidden bg-white text-white font-sans flex flex-col md:min-h-screen">
+    <div id="home" className="relative w-full overflow-hidden bg-white text-white font-sans flex flex-col">
       {/* 
         BANNER HEIGHT ADJUSTMENT:
         Adjust the heights here (h-[400px] md:h-[600px] lg:h-[603px]) to change how tall the top image section is.
@@ -161,8 +161,8 @@ const HeroSection = () => {
       <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 z-10 hero-next-invisible cursor-pointer" title="Next Slide"></div>
 
       {/* PlayStation Style Clean White Thumbnail Section */}
-      <div className="w-full bg-white relative flex justify-center z-30 pt-6 pb-0 md:pt-10 md:pb-0 shadow-[0_-10px_20px_rgba(0,0,0,0.02)]">
-        <div className="flex overflow-x-auto hide-scrollbar md:overflow-visible flex-nowrap md:flex-wrap justify-start md:justify-center gap-2 sm:gap-3 md:gap-4 px-4 sm:px-6 w-full max-w-[1200px] pointer-events-auto group/strip pb-2 md:pb-0">
+      <div className="w-full bg-white relative flex justify-center z-30 pt-6 pb-6 md:pt-10 md:pb-8 shadow-[0_-10px_20px_rgba(0,0,0,0.02)]">
+        <div className="flex overflow-x-auto hide-scrollbar lg:overflow-visible flex-nowrap lg:flex-wrap justify-start lg:justify-center gap-2 sm:gap-3 md:gap-4 px-4 sm:px-6 w-full max-w-[1200px] pointer-events-auto group/strip">
           {slides.map((slide, idx) => (
             <div
               key={slide.id}

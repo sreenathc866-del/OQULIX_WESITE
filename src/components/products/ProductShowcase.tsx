@@ -12,7 +12,7 @@ const ProductShowcase = () => {
                 return (
                     <section
                         key={product.id}
-                        className={`w-full py-16 md:py-24 lg:py-32 overflow-hidden transition-colors duration-500 ${isDark ? 'bg-[#0f0f0f] text-white' : 'bg-[#fafafa] text-gray-900'
+                        className={`w-full py-16 md:py-24 lg:py-32 overflow-hidden transition-colors duration-500 ${isDark ? 'bg-[#0f0f0f] text-white' : 'bg-white text-gray-900'
                             }`}
                     >
                         <div className={`container mx-auto px-6 md:px-10 lg:px-12 max-w-[1300px] flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-10 md:gap-16 lg:gap-20`}>

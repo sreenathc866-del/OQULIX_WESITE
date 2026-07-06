@@ -123,30 +123,30 @@ export const team = [
     id: 1,
     name: "Vishnuprakash P",
     role: "Founder / CEO",
-    image: "/images/team/vishnuprakash.jpg", // Needs actual path
+    image: "/vishnu.jpg",
      socials: {
-       linkedin: "#",
-       instagram: "#",
+       linkedin: "https://www.linkedin.com/in/vishnuprakash-p-125b44232",
+       instagram: "https://www.instagram.com/vishnuprakash___?igshid=NGVhN2U2NjQ0Yg%3D%3D",
     },
   },
   {
     id: 2,
     name: "Anjana Remesh",
     role: "Co-founder",
-    image: "/images/team/anjana.jpg", // Needs actual path
+    image: "/anjana.jpg",
     socials: {
-      linkedin: "#",
-      instagram: "#",
+      linkedin: "https://www.linkedin.com/in/anjana-remesh-4ab885157/",
+      instagram: "https://www.instagram.com/_____ja_aan__?igsh=MXh4NTJleTY1N3RjOQ==",
     },
   },
   {
     id: 3,
     name: "Sandeep P",
     role: "Co-founder",
-    image: "/images/team/sandeep.jpg", // Needs actual path
+    image: "/sandeep.jpg",
     socials: {
-      linkedin: "#",
-      instagram: "#",
+      linkedin: "https://www.linkedin.com/in/sandeep-nambiar-p-04290959/",
+      instagram: "https://www.instagram.com/sandeep_nbr?igshid=NGVhN2U2NjQ0Yg%3D%3D%3B",
     },
   },
 ];

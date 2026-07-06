@@ -38,7 +38,7 @@ const TeamSection = () => {
               <div
                 key={member.id}
                 onClick={() => setActiveIndex(idx)}
-                className={`absolute w-[220px] md:w-[260px] lg:w-[280px] h-[300px] md:h-[340px] lg:h-[360px] bg-white transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] flex flex-col ${positionClass} ${zIndexClass} ${displayClass} shadow-black/50`}
+                className={`absolute w-[220px] md:w-[260px] lg:w-[280px] h-[320px] md:h-[360px] lg:h-[380px] bg-white transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] flex flex-col ${positionClass} ${zIndexClass} ${displayClass} shadow-black/50`}
               >
                 {/* Image Container - Square Aspect */}
                 <div className="w-full h-[220px] md:h-[260px] lg:h-[280px] bg-[#a8c392] overflow-hidden">
@@ -55,7 +55,7 @@ const TeamSection = () => {
 
                 {/* Text Content Container */}
                 <div className="w-full bg-white flex-1 flex flex-col items-center justify-start pt-3 lg:pt-4 px-2 lg:px-4 text-gray-900 text-center overflow-hidden">
-                  <h3 className="text-[15px] lg:text-[17px] font-medium tracking-wide text-[#333] truncate w-full px-1">{member.name}</h3>
+                  <h3 className="text-[16px] lg:text-[18px] font-semibold tracking-wide text-[#333] truncate w-full px-1">{member.name}</h3>
 
                   {/* Expandable Role and Socials */}
                   <div className={`transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] flex flex-col items-center w-full ${distance === 0 ? 'max-h-24 opacity-100 mt-1' : 'max-h-0 opacity-0 mt-0'}`}>

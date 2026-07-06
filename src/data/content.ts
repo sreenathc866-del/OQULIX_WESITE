@@ -5,7 +5,7 @@ export const products = [
     tagline: "Redefining Physical Therapy",
     description: "Happy Moves utilizes cutting-edge Virtual Reality to transform traditional rehabilitation. By immersing patients in interactive, game-like environments, it increases motivation and accelerates recovery. Our platform tracks precise movements, offering real-time feedback and comprehensive data analytics for therapists.",
     features: ["Immersive 3D Environments", "Real-time Motion Tracking", "Gamified Rehabilitation", "Clinical Data Analytics"],
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
+    image: "/happymoves.jpg",
     video: "/videos/happy-moves.mp4",
     cta: {
       explore: "https://www.happymovesrehab.com/",
@@ -16,10 +16,10 @@ export const products = [
     id: 2,
     name: "AR Flash Cards",
     tagline: "Bring Learning to Life",
-    description: "Transform standard education into an interactive journey. With AR Flash Cards, children simply point their device at a card to see 3D models, animations, and hear authentic sounds. It bridges the gap between physical play and digital learning, fostering curiosity and retention.",
-    features: ["Interactive 3D Models", "Audio-Visual Feedback", "iOS & Android Support", "Curriculum Aligned"],
-    image: "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?q=80&w=2070&auto=format&fit=crop",
-    video: "/videos/ar-flash-cards.mp4",
+    description: "AR FLASH CARDS make learning magical. By combining physical flash cards with an augmented reality app, children and students can see 3D models of animals, planets, and historical artifacts spring to life right before their eyes, making education interactive and unforgettable.",
+    features: ["Interactive 3D Models", "Educational Audio & Text", "Multiple Subjects (Science, History)", "Easy-to-Use App"],
+    image: "/arcards.png",
+    video: "/videos/ar-cards.mp4",
     cta: {
       explore: "https://arcards.oqulix.com/",
       bookDemo: "#contact",
@@ -44,7 +44,7 @@ export const products = [
     tagline: "Next-Level Engagement",
     description: "Elevate your brand or event with GAMEFAKTORY's custom interactive gaming solutions. We create immersive VR and AR experiences designed to captivate audiences, drive engagement, and deliver unforgettable marketing campaigns.",
     features: ["Custom Brand Integration", "High-End VR Experiences", "Reward-based Mechanics", "Event & Retail Deployment"],
-    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2071&auto=format&fit=crop",
+    image: "/gamefactory.webp",
     video: "/videos/gamefaktory.mp4",
     cta: {
       explore: "https://www.gamefaktory.com/",

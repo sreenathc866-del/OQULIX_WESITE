@@ -37,7 +37,7 @@ const ContactSection = () => {
                         <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Headquarters</h3>
                         <div className="flex-1 w-full rounded-3xl overflow-hidden shadow-sm border border-gray-100 min-h-[300px] lg:min-h-[400px]">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509303!2d144.9537353153165!3d-37.81627997975168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11b3f7%3A0x5045675218ceed30!2sOQULIX!5e0!3m2!1sen!2sau!4v1616161616161!5m2!1sen!2sau"
+                                src="https://maps.google.com/maps?q=2nd+Floor,+OQULIX,+Krishna+Bhat+Tower,+Thammanam+-+Pullepady+Rd,+Pullepady,+Kochi,+Ernakulam,+Kerala+682035&t=&z=13&ie=UTF8&iwloc=&output=embed"
                                 width="100%"
                                 height="100%"
                                 style={{ border: 0 }}

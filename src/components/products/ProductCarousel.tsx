@@ -10,7 +10,7 @@ const ProductCarousel = () => {
     const [activeIndex, setActiveIndex] = useState(0);
 
     return (
-        <section className="bg-white py-16 md:py-24 font-sans">
+        <section className="bg-white pt-6 pb-16 md:pt-8 md:pb-24 font-sans">
             <div className="container mx-auto pl-6 md:pl-10 lg:pl-12 max-w-[1400px]">
                 {/* Title Section */}
                 <div className="mb-10 md:mb-16">
@@ -46,29 +46,29 @@ const ProductCarousel = () => {
                             return (
                                 <SwiperSlide key={product.id}>
                                     <a
-                                        href={`#${product.id}`}
+                                        href={product.cta?.explore || `#${product.id}`}
+                                        target={product.cta?.explore && product.cta.explore.startsWith('http') ? '_blank' : '_self'}
+                                        rel={product.cta?.explore && product.cta.explore.startsWith('http') ? 'noopener noreferrer' : ''}
                                         className="block outline-none"
                                         onMouseEnter={() => setActiveIndex(idx)}
                                     >
-                                        <div className={`relative flex flex-col h-[320px] md:h-[400px] rounded-[24px] overflow-hidden transition-all duration-300 border-2 ${
-                                            activeIndex === idx 
-                                                ? 'border-[#0070cc] shadow-[0_4px_20px_rgba(0,112,204,0.15)] scale-[1.02] z-10' 
+                                        <div className={`relative flex flex-col h-[320px] md:h-[400px] rounded-[24px] overflow-hidden transition-all duration-300 border-2 ${activeIndex === idx
+                                                ? 'border-[#0070cc] shadow-[0_4px_20px_rgba(0,112,204,0.15)] scale-[1.02] z-10'
                                                 : 'border-gray-200 hover:border-gray-300'
-                                        }`}>
+                                            }`}>
                                             {/* Image Half */}
                                             <div className="h-[75%] md:h-[80%] w-full bg-gray-100 overflow-hidden">
-                                                <img 
-                                                    src={product.image} 
-                                                    alt={product.name} 
+                                                <img
+                                                    src={product.image}
+                                                    alt={product.name}
                                                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                                                 />
                                             </div>
-                                            
+
                                             {/* Text Half */}
                                             <div className="h-[25%] md:h-[20%] w-full bg-white flex items-center justify-center px-4">
-                                                <h3 className={`font-bold text-sm md:text-base tracking-wide transition-colors duration-300 ${
-                                                    activeIndex === idx ? 'text-[#0070cc]' : 'text-gray-900'
-                                                }`}>
+                                                <h3 className={`font-bold text-sm md:text-base tracking-wide transition-colors duration-300 ${activeIndex === idx ? 'text-[#0070cc]' : 'text-gray-900'
+                                                    }`}>
                                                     {product.name}
                                                 </h3>
                                             </div>

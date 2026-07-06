@@ -42,24 +42,7 @@ const AboutSection = () => {
                     </div>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    <div className="bg-blue-50 p-8 rounded-2xl text-center">
-                        <h4 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-2">Projects</h4>
-                        <p className="text-4xl font-light text-blue-600">50+</p>
-                    </div>
-                    <div className="bg-blue-50 p-8 rounded-2xl text-center">
-                        <h4 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-2">Clients</h4>
-                        <p className="text-4xl font-light text-blue-600">30+</p>
-                    </div>
-                    <div className="bg-blue-50 p-8 rounded-2xl text-center">
-                        <h4 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-2">Products</h4>
-                        <p className="text-4xl font-light text-blue-600">3</p>
-                    </div>
-                    <div className="bg-blue-50 p-8 rounded-2xl text-center">
-                        <h4 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-2">Industries</h4>
-                        <p className="text-4xl font-light text-blue-600">5</p>
-                    </div>
-                </div>
+
             </div>
         </section>
     );

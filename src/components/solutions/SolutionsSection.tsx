@@ -1,13 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaHeartbeat, FaGraduationCap, FaBuilding, FaShoppingCart, FaChalkboardTeacher } from 'react-icons/fa';
+import { FaHeartbeat, FaGraduationCap, FaGamepad } from 'react-icons/fa';
 
 const solutions = [
-  { title: 'Healthcare', icon: <FaHeartbeat size={40} className="text-blue-600 mb-4" />, description: 'Immersive VR tools for patient rehabilitation and advanced surgical planning.' },
-  { title: 'Education', icon: <FaGraduationCap size={40} className="text-blue-600 mb-4" />, description: 'Augmented reality learning tools that bring classrooms to life.' },
-  { title: 'Real Estate', icon: <FaBuilding size={40} className="text-blue-600 mb-4" />, description: 'Virtual property tours and architectural visualization.' },
-  { title: 'Retail', icon: <FaShoppingCart size={40} className="text-blue-600 mb-4" />, description: 'Interactive AR shopping experiences and virtual try-ons.' },
-  { title: 'Enterprise Training', icon: <FaChalkboardTeacher size={40} className="text-blue-600 mb-4" />, description: 'Risk-free, scalable VR training simulations for corporate teams.' },
+  { title: 'Healthcare', icon: <FaHeartbeat size={40} className="text-blue-600 mb-4" />, description: 'Transforming physiotherapy and patient rehabilitation through immersive virtual reality experiences and advanced recovery tools.' },
+  { title: 'Education', icon: <FaGraduationCap size={40} className="text-blue-600 mb-4" />, description: 'Bringing classrooms to life with interactive smart boards and augmented reality flash cards for engaging student learning.' },
+  { title: 'Entertainment', icon: <FaGamepad size={40} className="text-blue-600 mb-4" />, description: 'Creating unforgettable custom interactive games and gamified experiences that drive user engagement and fun.' },
 ];
 
 const SolutionsSection = () => {

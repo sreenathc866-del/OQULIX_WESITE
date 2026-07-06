@@ -27,7 +27,7 @@ const slides = [
     title: "HAPPY MOVES",
     subtitle: "Transforming Healthcare with Virtual Reality",
     description: "Enhance patient recovery through immersive virtual rehabilitation experiences. Deliver personalized physiotherapy sessions, neuro recovery exercises, and cognitive engagement tools powered by advanced VR technology.",
-    image: "/happymoves.png",
+    image: "/happymoves.jpg",
     primaryUrl: "https://www.happymovesrehab.com/",
     primaryBtn: "Visit Happy Moves",
     secondaryBtn: "Request Demo",
@@ -40,7 +40,7 @@ const slides = [
     title: "GAMEFAKTORY",
     subtitle: "Turning Engagement Into Game Play",
     description: "Launch custom interactive games designed for brands, events, and marketing campaigns. Boost user engagement through reward-based gamification experiences that drive real results.",
-    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=2071&auto=format&fit=crop",
+    image: "/gamefactory.webp",
     primaryUrl: "https://www.gamefaktory.com/",
     primaryBtn: "Visit GameFaktory",
     secondaryBtn: "Book a Demo",
@@ -52,8 +52,8 @@ const slides = [
     id: 4,
     title: "AR FLASH CARDS",
     subtitle: "Revolutionizing Learning Processes",
-    description: "Unlock interactive learning with AR-powered flashcards that transform traditional education into immersive 3D experiences with animals, sounds, and animated educational visuals.",
-    image: "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?q=80&w=2070&auto=format&fit=crop",
+    description: "Transform education with interactive Augmented Reality flash cards. Bring 3D models to life, making learning engaging, memorable, and fun for students of all ages.",
+    image: "/arcards.png",
     primaryUrl: "https://arcards.oqulix.com/",
     primaryBtn: "View AR Cards",
     secondaryBtn: "Get Product Sheet",
@@ -118,7 +118,7 @@ const HeroSection = () => {
               {/* Content */}
               <div className={`container mx-auto px-6 sm:px-10 md:px-16 h-full flex flex-col relative z-20 pointer-events-none pt-28 md:pt-0 ${slide.alignmentClass || 'justify-center items-start text-left'}`}>
                 <div
-                  className={`transition-all duration-700 delay-100 pointer-events-auto ${slide.sizeClass || 'max-w-xl'} ${activeIndex === idx ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  className={`transition-all duration-700 delay-100 ${slide.sizeClass || 'max-w-xl'} ${activeIndex === idx ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-8 pointer-events-none'
                     }`}
                 >
                   <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 md:mb-4 tracking-tight drop-shadow-md">
@@ -157,11 +157,11 @@ const HeroSection = () => {
       </div>
 
       {/* Invisible Clickable Navigation Areas on Left and Right edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 z-20 hero-prev-invisible cursor-pointer" title="Previous Slide"></div>
-      <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 z-20 hero-next-invisible cursor-pointer" title="Next Slide"></div>
+      <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 z-10 hero-prev-invisible cursor-pointer" title="Previous Slide"></div>
+      <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 z-10 hero-next-invisible cursor-pointer" title="Next Slide"></div>
 
       {/* PlayStation Style Clean White Thumbnail Section */}
-      <div className="w-full bg-white relative flex justify-center z-30 py-6 md:py-10 shadow-[0_-10px_20px_rgba(0,0,0,0.02)]">
+      <div className="w-full bg-white relative flex justify-center z-30 pt-6 pb-0 md:pt-10 md:pb-0 shadow-[0_-10px_20px_rgba(0,0,0,0.02)]">
         <div className="flex overflow-x-auto hide-scrollbar md:overflow-visible flex-nowrap md:flex-wrap justify-start md:justify-center gap-2 sm:gap-3 md:gap-4 px-4 sm:px-6 w-full max-w-[1200px] pointer-events-auto group/strip pb-2 md:pb-0">
           {slides.map((slide, idx) => (
             <div

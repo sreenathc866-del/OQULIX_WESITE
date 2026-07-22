@@ -124,9 +124,9 @@ export const team = [
     name: "Vishnuprakash P",
     role: "Founder / CEO",
     image: "/vishnu.jpg",
-     socials: {
-       linkedin: "https://www.linkedin.com/in/vishnuprakash-p-125b44232",
-       instagram: "https://www.instagram.com/vishnuprakash___?igshid=NGVhN2U2NjQ0Yg%3D%3D",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/vishnuprakash-p-125b44232",
+      instagram: "https://www.instagram.com/vishnuprakash___?igshid=NGVhN2U2NjQ0Yg%3D%3D",
     },
   },
   {
@@ -147,6 +147,49 @@ export const team = [
     socials: {
       linkedin: "https://www.linkedin.com/in/sandeep-nambiar-p-04290959/",
       instagram: "https://www.instagram.com/sandeep_nbr?igshid=NGVhN2U2NjQ0Yg%3D%3D%3B",
+    },
+  },
+];
+
+export const valuableMembers = [
+  {
+    id: 1,
+    name: "Sakeer Shamsudheen",
+    role: "Valuable Member",
+    image: "/images/team/placeholder.jpg",
+    socials: {
+      linkedin: "#",
+      instagram: "#",
+    },
+  },
+  {
+    id: 2,
+    name: "Navaneeth",
+    role: "Valuable Member",
+    image: "/images/team/placeholder.jpg",
+    socials: {
+      linkedin: "#",
+      instagram: "#",
+    },
+  },
+  {
+    id: 3,
+    name: "Mohammed Hussain A",
+    role: "Valuable Member",
+    image: "/images/team/placeholder.jpg",
+    socials: {
+      linkedin: "#",
+      instagram: "#",
+    },
+  },
+  {
+    id: 4,
+    name: "Muhammed Suhail",
+    role: "Valuable Member",
+    image: "/images/team/placeholder.jpg",
+    socials: {
+      linkedin: "#",
+      instagram: "#",
     },
   },
 ];

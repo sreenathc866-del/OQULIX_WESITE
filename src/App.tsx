@@ -9,7 +9,9 @@ import AboutSection from './components/about/AboutSection';
 // import ExperienceSection from './components/experience/ExperienceSection';
 import TestimonialsSection from './components/testimonials/TestimonialsSection';
 import TeamSection from './components/team/TeamSection';
+import FAQPage from './pages/FAQPage';
 import ContactSection from './components/contact/ContactSection';
+import Footer from './components/ui/Footer';
 import './styles/globals.css';
 
 const App = () => {
@@ -28,11 +30,13 @@ const App = () => {
               <AboutSection />
               {/* <ExperienceSection /> */}
               <TestimonialsSection />
-              <TeamSection />
               <ContactSection />
+              <Footer />
             </>
           }
         />
+        <Route path="/team" element={<TeamSection />} />
+        <Route path="/faq" element={<FAQPage />} />
       </Routes>
     </Router>
   );

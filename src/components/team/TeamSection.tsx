@@ -1,74 +1,85 @@
-import React, { useState } from 'react';
-import { team } from '../../data/content';
+import React, { useEffect } from 'react';
+import { valuableMembers } from '../../data/content';
+import { foundersData } from '../../data/foundersData';
+import FounderCard from './FounderCard';
 import { FaLinkedin, FaInstagram } from 'react-icons/fa';
 
+const TeamCard = ({ member }: { member: any }) => (
+  <div className="w-[260px] lg:w-[280px] h-[360px] lg:h-[380px] bg-white transition-all duration-300 ease-out flex flex-col hover:scale-105 shadow-xl shadow-black/50 mx-auto group">
+    {/* Image Container - Square Aspect */}
+    <div className="w-full h-[260px] lg:h-[280px] bg-[#a8c392] overflow-hidden relative">
+      <img
+        src={member.image}
+        alt={member.name}
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        onError={(e) => {
+          // Fallback in case actual images don't exist yet
+          (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=random&size=300`;
+        }}
+      />
+    </div>
+
+    {/* Text Content Container */}
+    <div className="w-full bg-white flex-1 flex flex-col items-center justify-start pt-4 px-2 lg:px-4 text-gray-900 text-center overflow-hidden">
+      <h3 className="text-[17px] lg:text-[18px] font-semibold tracking-wide text-[#333] truncate w-full px-1">{member.name}</h3>
+
+      {/* Role and Socials */}
+      <div className="flex flex-col items-center w-full mt-1">
+        <p className="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-3">{member.role}</p>
+        <div className="flex space-x-5 text-gray-700">
+          {member.socials?.linkedin && member.socials.linkedin !== "#" && (
+            <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">
+              <FaLinkedin size={16} />
+            </a>
+          )}
+          {member.socials?.instagram && member.socials.instagram !== "#" && (
+            <a href={member.socials.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-black transition-colors">
+              <FaInstagram size={16} />
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
 const TeamSection = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
-    <section id="contact" className="relative py-24 bg-black text-white overflow-hidden min-h-screen flex items-center">
+    <section id="contact" className="py-24 bg-black text-white overflow-hidden min-h-screen pt-32">
+      <div className="container mx-auto px-6 w-full flex flex-col items-center">
 
-      {/* Decorative vertical dots from screenshot removed as per user request */}
+        {/* Main Heading */}
+        <div className="text-center mb-16 md:mb-24">
+          <h2 className="text-4xl md:text-5xl font-light tracking-tight mb-4">
+            Our <span className="font-bold">Team</span>
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
+            The visionary minds and dedicated creators behind Oqulix's immersive experiences.
+          </p>
+        </div>
 
-      <div className="container mx-auto px-6 w-full flex flex-col items-center justify-center">
+        {/* Founders Section */}
+        <div className="w-full max-w-[1000px] mb-20 md:mb-32">
+          <h3 className="text-2xl md:text-3xl font-bold text-center mb-12 text-[#0070cc] tracking-wide uppercase">Founders</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+            {foundersData.map((member) => (
+              <FounderCard key={member.id} member={member} founderId={member.id} />
+            ))}
+          </div>
+        </div>
 
-        <div className="relative w-full max-w-5xl h-[400px] lg:h-[500px] flex items-center justify-center mt-12 perspective-1000">
-          {team.map((member, idx) => {
-            const distance = (idx - activeIndex + team.length) % team.length;
-
-            let positionClass = '';
-            let zIndexClass = 'z-0';
-            let displayClass = 'opacity-0 scale-50 pointer-events-none';
-
-            if (distance === 0) {
-              positionClass = 'translate-x-0';
-              zIndexClass = 'z-20';
-              displayClass = 'opacity-100 scale-[1.05] md:scale-[1.15] shadow-2xl pointer-events-auto';
-            } else if (distance === 1) {
-              positionClass = 'translate-x-[85%] sm:translate-x-[100%] md:translate-x-[120%] lg:translate-x-[130%]';
-              zIndexClass = 'z-10';
-              displayClass = 'opacity-50 md:opacity-60 scale-75 md:scale-90 pointer-events-auto hover:opacity-80 cursor-pointer';
-            } else if (distance === team.length - 1) {
-              positionClass = '-translate-x-[85%] sm:-translate-x-[100%] md:-translate-x-[120%] lg:-translate-x-[130%]';
-              zIndexClass = 'z-10';
-              displayClass = 'opacity-50 md:opacity-60 scale-75 md:scale-90 pointer-events-auto hover:opacity-80 cursor-pointer';
-            }
-
-            return (
-              <div
-                key={member.id}
-                onClick={() => setActiveIndex(idx)}
-                className={`absolute w-[220px] md:w-[260px] lg:w-[280px] h-[320px] md:h-[360px] lg:h-[380px] bg-white transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] flex flex-col ${positionClass} ${zIndexClass} ${displayClass} shadow-black/50`}
-              >
-                {/* Image Container - Square Aspect */}
-                <div className="w-full h-[220px] md:h-[260px] lg:h-[280px] bg-[#a8c392] overflow-hidden">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      // Fallback in case actual images don't exist yet
-                      (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=random&size=300`;
-                    }}
-                  />
-                </div>
-
-                {/* Text Content Container */}
-                <div className="w-full bg-white flex-1 flex flex-col items-center justify-start pt-3 lg:pt-4 px-2 lg:px-4 text-gray-900 text-center overflow-hidden">
-                  <h3 className="text-[16px] lg:text-[18px] font-semibold tracking-wide text-[#333] truncate w-full px-1">{member.name}</h3>
-
-                  {/* Expandable Role and Socials */}
-                  <div className={`transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] flex flex-col items-center w-full ${distance === 0 ? 'max-h-24 opacity-100 mt-1' : 'max-h-0 opacity-0 mt-0'}`}>
-                    <p className="text-gray-500 text-xs font-semibold uppercase tracking-wider mb-3">{member.role}</p>
-                    <div className="flex space-x-5 text-gray-700">
-                      <a href={member.socials?.linkedin} className="hover:text-black transition-colors"><FaLinkedin size={15} /></a>
-                      <a href={member.socials?.instagram} className="hover:text-black transition-colors"><FaInstagram size={15} /></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+        {/* Valuable Members Section */}
+        <div className="w-full max-w-[1200px]">
+          <h3 className="text-2xl md:text-3xl font-bold text-center mb-12 text-gray-300 tracking-wide uppercase">Valuable Members</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
+            {valuableMembers.map((member) => (
+              <TeamCard key={member.id} member={member} />
+            ))}
+          </div>
         </div>
 
       </div>

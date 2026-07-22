@@ -26,12 +26,7 @@ const Navbar = () => {
             className={`fixed top-0 left-0 w-full z-50 flex flex-col transition-all duration-300 ${scrolled ? 'shadow-md' : ''
                 }`}
         >
-            {/* Top Black Corporate Bar */}
-            <div className="bg-black w-full flex justify-end items-center px-6 md:px-8 h-8">
-                <span className="text-white font-bold tracking-widest text-[13px] uppercase">
-                    OQULIX
-                </span>
-            </div>
+
 
             {/* Main White Navbar */}
             <div className={`w-full bg-white transition-all duration-300 ${scrolled ? 'py-2' : 'py-2 md:py-3'}`}>
@@ -53,7 +48,7 @@ const Navbar = () => {
                                 <a
                                     key={link.name}
                                     href={link.href}
-                                    className="flex items-center text-[15px] font-bold text-gray-800 hover:text-blue-600 transition-colors"
+                                    className="flex items-center nav-text text-gray-800 hover:text-blue-600 transition-colors"
                                 >
                                     {link.name}
                                     <FaChevronDown className="ml-1 text-[10px] text-gray-500" />
@@ -105,7 +100,7 @@ const Navbar = () => {
                         <a
                             href="#contact"
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className="w-full block text-center bg-blue-600 text-white font-bold py-3 rounded-full"
+                            className="w-full block text-center bg-blue-600 text-white btn-text py-3 rounded-full"
                         >
                             Contact Us
                         </a>

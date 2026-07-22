@@ -11,11 +11,11 @@ const ProductCarousel = () => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
     return (
-        <section className="bg-white pt-6 pb-16 md:pt-12 md:pb-24 font-sans overflow-hidden">
+        <section id="products" className="bg-white pt-6 pb-16 md:pt-12 md:pb-24 font-sans overflow-hidden">
             <div className="container mx-auto pl-6 md:pl-10 lg:pl-12 max-w-[1400px]">
                 {/* Title Section */}
                 <div className="mb-10 md:mb-16">
-                    <h2 className="text-3xl md:text-5xl lg:text-[54px] font-bold tracking-tight text-gray-900 leading-[1.1]">
+                    <h2 className="text-4xl md:text-5xl lg:text-[54px] font-light tracking-tight text-gray-900 leading-[1.1]">
                         Discover all<br />Products and Accessories
                     </h2>
                 </div>
@@ -57,7 +57,7 @@ const ProductCarousel = () => {
                                         onTouchStart={() => setHoveredIndex(idx)}
                                     >
                                         <div className={`relative flex flex-col h-[360px] md:h-[440px] rounded-[24px] overflow-hidden transition-all duration-500 ease-in-out border border-transparent shadow-lg ${hoveredIndex === idx ? 'shadow-[0_12px_40px_rgba(0,112,204,0.4)] scale-[1.04] -translate-y-2 border-[#0070cc]/30' : ''}`}>
-                                            
+
                                             {/* Full Background Image */}
                                             <div className="absolute inset-0 bg-black overflow-hidden">
                                                 <img
@@ -75,7 +75,7 @@ const ProductCarousel = () => {
 
                                             {/* Content Layer */}
                                             <div className="absolute inset-0 flex flex-col justify-end p-6 z-20 pointer-events-none">
-                                                
+
                                                 {/* Centered Title (Moves up on hover) */}
                                                 <div className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ease-in-out ${hoveredIndex === idx ? '-translate-y-8 md:-translate-y-10' : 'translate-y-0'}`}>
                                                     <h3 className={`font-bold text-2xl md:text-3xl lg:text-4xl text-center px-4 tracking-wide transition-all duration-500 ease-in-out text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] ${hoveredIndex === idx ? 'scale-105 drop-shadow-[0_0_15px_rgba(255,255,255,0.8)]' : 'scale-100'}`}>

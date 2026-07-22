@@ -12,6 +12,7 @@ const ProductShowcase = () => {
                 return (
                     <section
                         key={product.id}
+                        id={product.name.toLowerCase().replace(/ /g, '-')}
                         className={`w-full py-16 md:py-24 lg:py-32 overflow-hidden transition-colors duration-500 ${isDark ? 'bg-[#0f0f0f] text-white' : 'bg-white text-gray-900'
                             }`}
                     >
@@ -25,15 +26,15 @@ const ProductShowcase = () => {
                                     viewport={{ once: true, margin: "-100px" }}
                                     transition={{ duration: 0.6, ease: "easeOut" }}
                                 >
-                                    {/* PlayStation style tagline */}
+                                    <h2 className={`text-4xl md:text-5xl lg:text-[54px] font-light tracking-tight leading-[1.1] mb-4 ${isDark ? 'text-white' : 'text-[#1f1f1f]'}`}>
+                                        {product.name}
+                                    </h2>
+                                    {/* PlayStation style tagline / sub-heading */}
                                     {product.tagline && (
-                                        <p className="text-[#0070cc] font-bold text-sm tracking-widest uppercase mb-3">
+                                        <p className="text-[#0070cc] text-lg md:text-xl font-normal mb-4">
                                             {product.tagline}
                                         </p>
                                     )}
-                                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-                                        {product.name}
-                                    </h2>
                                 </motion.div>
 
                                 <motion.p
@@ -41,7 +42,7 @@ const ProductShowcase = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, margin: "-100px" }}
                                     transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-                                    className={`text-lg md:text-xl leading-relaxed max-w-xl ${isDark ? 'text-gray-300' : 'text-gray-600'}`}
+                                    className={`card-desc max-w-xl ${isDark ? 'text-gray-300' : 'text-gray-600'}`}
                                 >
                                     {product.description}
                                 </motion.p>
@@ -53,10 +54,10 @@ const ProductShowcase = () => {
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true, margin: "-100px" }}
                                         transition={{ duration: 0.6, delay: 0.15, ease: "easeOut" }}
-                                        className={`grid grid-cols-1 md:grid-cols-2 gap-3 max-w-xl ${isDark ? 'text-gray-400' : 'text-gray-500'}`}
+                                        className={`grid grid-cols-1 md:grid-cols-2 gap-3 max-w-xl card-desc ${isDark ? 'text-gray-400' : 'text-gray-500'}`}
                                     >
                                         {product.features.map((feature, i) => (
-                                            <li key={i} className="flex items-center space-x-2 text-sm font-medium">
+                                            <li key={i} className="flex items-center space-x-2 font-medium">
                                                 <div className="w-1.5 h-1.5 rounded-full bg-[#0070cc]"></div>
                                                 <span>{feature}</span>
                                             </li>
@@ -75,12 +76,12 @@ const ProductShowcase = () => {
                                         href={product.cta.explore}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className={`inline-flex items-center justify-center px-8 py-3.5 rounded-full font-bold text-sm uppercase tracking-wide transition-all duration-300 shadow-lg ${isDark
-                                            ? 'bg-white text-black hover:bg-gray-200 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]'
-                                            : 'bg-[#0070cc] text-white hover:bg-[#005fb3] hover:scale-105 hover:shadow-[0_0_20px_rgba(0,112,204,0.4)]'
+                                        className={`inline-flex items-center justify-center px-8 py-3 rounded-full text-base font-semibold transition-all duration-300 ${isDark
+                                            ? 'bg-white text-black hover:bg-gray-200 hover:scale-105'
+                                            : 'bg-[#0070cc] text-white hover:bg-[#005fb3] hover:scale-105'
                                             }`}
                                     >
-                                        Learn More
+                                        Find out more
                                     </a>
                                 </motion.div>
                             </div>

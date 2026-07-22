@@ -13,14 +13,14 @@ const SolutionsSection = () => {
     <section id="solutions" className="py-24 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-light text-gray-900 mb-4">
-            Empowering <span className="font-bold">Industries</span>
+          <h2 className="section-title text-gray-900 mb-4">
+            Empowering <span>Industries</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="card-desc text-gray-600 max-w-2xl mx-auto">
             Our cutting-edge VR and AR technologies are designed to solve real-world challenges across multiple sectors.
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {solutions.map((solution, index) => (
             <motion.div
@@ -29,8 +29,8 @@ const SolutionsSection = () => {
               whileHover={{ y: -5 }}
             >
               {solution.icon}
-              <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">{solution.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{solution.description}</p>
+              <h3 className="card-title text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">{solution.title}</h3>
+              <p className="card-desc text-gray-600">{solution.description}</p>
             </motion.div>
           ))}
         </div>

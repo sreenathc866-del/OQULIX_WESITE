@@ -121,15 +121,15 @@ const HeroSection = () => {
                   className={`transition-all duration-700 delay-100 ${slide.sizeClass || 'max-w-xl'} ${activeIndex === idx ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-8 pointer-events-none'
                     }`}
                 >
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 md:mb-4 tracking-tight drop-shadow-md">
+                  <h1 className="hero-title text-white mb-3 md:mb-4 drop-shadow-md">
                     {slide.title}
                   </h1>
 
-                  <h2 className="text-base sm:text-lg md:text-xl font-medium text-gray-100 mb-3 md:mb-4 drop-shadow-sm">
+                  <h2 className="hero-subtitle text-gray-100 mb-3 md:mb-4 drop-shadow-sm">
                     {slide.subtitle}
                   </h2>
 
-                  <p className={`text-sm md:text-base text-gray-200 mb-6 md:mb-8 leading-relaxed font-normal max-w-md drop-shadow-sm ${slide.alignmentClass?.includes('text-right') ? 'ml-auto' : slide.alignmentClass?.includes('text-center') ? 'mx-auto' : ''}`}>
+                  <p className={`card-desc text-gray-200 mb-6 md:mb-8 drop-shadow-sm max-w-md ${slide.alignmentClass?.includes('text-right') ? 'ml-auto' : slide.alignmentClass?.includes('text-center') ? 'mx-auto' : ''}`}>
                     {slide.description}
                   </p>
 
@@ -138,13 +138,13 @@ const HeroSection = () => {
                       href={slide.primaryUrl}
                       target={slide.primaryUrl !== "#" && slide.primaryUrl !== "#about" ? "_blank" : "_self"}
                       rel={slide.primaryUrl !== "#" && slide.primaryUrl !== "#about" ? "noopener noreferrer" : ""}
-                      className="px-6 py-2.5 sm:py-2.5 text-center bg-white text-black hover:bg-gray-200 font-bold rounded-full transition-colors duration-200 text-sm inline-block shadow-sm"
+                      className="px-6 py-2.5 sm:py-2.5 text-center bg-white text-black hover:bg-gray-200 rounded-full transition-colors duration-200 btn-text inline-block shadow-sm"
                     >
                       {slide.primaryBtn}
                     </a>
                     <a
                       href={slide.secondaryBtn === "Contact Us" || slide.secondaryBtn === "Request Demo" ? "#contact" : "#"}
-                      className="px-6 py-2.5 sm:py-2.5 text-center bg-black/40 border border-white/50 hover:bg-white/20 text-white font-bold rounded-full transition-colors duration-200 text-sm inline-block backdrop-blur-sm"
+                      className="px-6 py-2.5 sm:py-2.5 text-center bg-black/40 border border-white/50 hover:bg-white/20 text-white rounded-full transition-colors duration-200 btn-text inline-block backdrop-blur-sm"
                     >
                       {slide.secondaryBtn}
                     </a>
@@ -154,11 +154,10 @@ const HeroSection = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
-
       {/* Invisible Clickable Navigation Areas on Left and Right edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 z-10 hero-prev-invisible cursor-pointer" title="Previous Slide"></div>
-      <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 z-10 hero-next-invisible cursor-pointer" title="Next Slide"></div>
+      <div onClick={() => swiperInstance?.slidePrev()} className="absolute left-0 top-0 bottom-0 w-16 md:w-32 z-30 hero-prev-invisible cursor-pointer" title="Previous Slide"></div>
+      <div onClick={() => swiperInstance?.slideNext()} className="absolute right-0 top-0 bottom-0 w-16 md:w-32 z-30 hero-next-invisible cursor-pointer" title="Next Slide"></div>
+      </div>
 
       {/* PlayStation Style Clean White Thumbnail Section */}
       <div className="w-full bg-white relative flex justify-center z-30 pt-2 pb-2 md:pt-6 md:pb-4 shadow-[0_-10px_20px_rgba(0,0,0,0.02)]">

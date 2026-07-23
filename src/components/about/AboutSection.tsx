@@ -26,21 +26,7 @@ const AboutSection = () => {
                     </div>
                 </div>
 
-                <div className="mb-20">
-                    <h3 className="section-title mb-8 text-center">Milestones</h3>
-                    <div className="flex flex-col md:flex-row justify-center gap-8">
-                        <div className="bg-gray-50 border border-gray-100 p-8 rounded-2xl shadow-sm flex-1">
-                            <span className="btn-text text-blue-600 mb-2 block">2023</span>
-                            <h4 className="card-title mb-3">Company Founded</h4>
-                            <p className="card-desc text-gray-600">OQULIX was established to innovate in the fields of healthcare and education.</p>
-                        </div>
-                        <div className="bg-gray-50 border border-gray-100 p-8 rounded-2xl shadow-sm flex-1">
-                            <span className="btn-text text-blue-600 mb-2 block">2024</span>
-                            <h4 className="card-title mb-3">First Product Launch</h4>
-                            <p className="card-desc text-gray-600">Launched Happy Moves, a VR physiotherapy solution.</p>
-                        </div>
-                    </div>
-                </div>
+
 
 
             </div>

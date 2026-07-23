@@ -11,7 +11,7 @@ const TeamCard = ({ member }: { member: any }) => (
       <img
         src={member.image}
         alt={member.name}
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
         onError={(e) => {
           // Fallback in case actual images don't exist yet
           (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=random&size=300`;

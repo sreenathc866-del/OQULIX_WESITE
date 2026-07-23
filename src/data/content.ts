@@ -166,7 +166,7 @@ export const valuableMembers = [
     id: 2,
     name: "Navaneeth",
     role: "Valuable Member",
-    image: "/images/team/placeholder.jpg",
+    image: "/navaneeth.jpg",
     socials: {
       linkedin: "#",
       instagram: "#",
@@ -176,7 +176,7 @@ export const valuableMembers = [
     id: 3,
     name: "Mohammed Hussain A",
     role: "Valuable Member",
-    image: "/images/team/placeholder.jpg",
+    image: "/hussain.jpg",
     socials: {
       linkedin: "#",
       instagram: "#",
@@ -186,7 +186,7 @@ export const valuableMembers = [
     id: 4,
     name: "Muhammed Suhail",
     role: "Valuable Member",
-    image: "/images/team/placeholder.jpg",
+    image: "/suhail.JPG",
     socials: {
       linkedin: "#",
       instagram: "#",

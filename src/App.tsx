@@ -10,6 +10,7 @@ import AboutSection from './components/about/AboutSection';
 import TestimonialsSection from './components/testimonials/TestimonialsSection';
 import TeamSection from './components/team/TeamSection';
 import FAQPage from './pages/FAQPage';
+import SolutionsPage from './pages/SolutionsPage';
 import ContactSection from './components/contact/ContactSection';
 import Footer from './components/ui/Footer';
 import './styles/globals.css';
@@ -37,6 +38,7 @@ const App = () => {
         />
         <Route path="/team" element={<TeamSection />} />
         <Route path="/faq" element={<FAQPage />} />
+        <Route path="/solutions" element={<SolutionsPage />} />
       </Routes>
     </Router>
   );

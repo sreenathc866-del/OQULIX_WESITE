@@ -146,7 +146,7 @@ const Footer = () => {
           <motion.div variants={itemVariants} className="lg:col-span-2">
             <h4 className="text-white font-semibold mb-6">Company</h4>
             <ul className="space-y-4">
-              {['Our Team', 'Blog', 'Privacy Policy', 'Terms', 'FAQ'].map((item) => (
+              {['Our Team', 'Blog', 'Privacy Policy', 'Terms'].map((item) => (
                 <li key={item}>
                   <Link to={item === 'Our Team' ? '/team' : item === 'FAQ' ? '/faq' : '#'} className="group flex items-center text-gray-400 hover:text-[#0070cc] transition-colors duration-300 text-sm">
                     <ChevronRight size={14} className="opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 mr-1" />
